@@ -1,11 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="icon" href="img/cabezaT.png">
+    <title>Hollow_servers</title>
 </head>
+
 <body>
-    
+
+    <!--Navbar -->
+    <nav class="flex flex-row z-10 fixed bg-black p-2 w-full text-white font-bold lg:text-xl text-lg">
+        <div class=" flex basis-full justify-start items-center">
+            <img src="img/logo_t.png" alt="Tux Technologies logo" class="lg:ml-20 ml-5 inline-12">
+            <h1>Hollow servers</h1>
+        </div>
+        <div class="flex basis-full justify-center hidden lg:visible">
+        </div>
+        <div class="flex flex-row basis-full items-center justify-end gap-4 tracking-widest lg:mr-10">
+            <button class="lg:hidden cursor-pointer" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+            <a href="#Inicio" data-target="Inicio"
+                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">INICIO</a>
+            <a href="#Producto" data-target="Producto"
+                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">PRODUCTOS</a>
+            <a href="#Contacto" data-target="Contacto"
+                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">CONTACTO</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor"
+                class="size-10 bg-black rounded-full hover:scale-115 transition delay-50 duration-250 cursor-pointer">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+        </div>
+    </nav>
+
+    <!--Seccion de relleno-->
+    <div class="h-15"></div>
+
+    <!--Inicio-->
+    <section class="flex flex-row bg-slate-800 p-4 items-center text-xl text-white font-bold">
+        <div class="flex flex-col p-4 gap-4 lg:ml-10">
+            <h1 class="text-4xl">Necesitas llevar tu idea la mundo</h1>
+            <p>Hazlo ahora con hollow servers, publica desde pequeñas api hasta una aplicación completa, los limites son
+                solo tu creatividad.</p>
+        </div>
+        <div class="basis-full"></div>
+        <div class="flex flex-col gap-4 basis-full">
+            <div class="flex flex-row justify-start items-center">
+                <svg version="1.0" class="size-30" xmlns="http://www.w3.org/2000/svg" width="500.000000pt"
+                    height="500.000000pt" viewBox="0 0 500.000000 500.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)" fill="#ffffff"
+                        stroke="none">
+                        <path
+                            d="M2249 4484 c-30 -12 -110 -106 -420 -492 -211 -261 -392 -487 -401 -501 -29 -42 -23 -105 11 -143 l29 -33 156 -3 156 -3 0 -287 c0 -168 4 -303 11 -324 10 -38 48 -68 84 -68 36 0 74 30 84 68 14 48 14 654 1 703 -6 19 -22 46 -36 60 -23 22 -36 24 -144 29 l-118 5 80 100 c45 55 185 228 311 385 126 157 233 286 237 288 4 1 50 -50 102 -115 52 -65 193 -239 313 -388 l218 -270 -114 -5 c-175 -8 -189 -23 -189 -205 0 -115 0 -117 29 -146 37 -36 79 -38 118 -5 25 21 28 31 31 100 l4 76 144 0 c183 0 213 13 229 101 8 47 -3 64 -205 315 -96 119 -269 334 -384 476 -115 143 -219 266 -230 273 -35 21 -69 24 -107 9z" />
+                        <path
+                            d="M2933 3172 c-12 -2 -125 -96 -250 -209 -382 -344 -379 -341 -353 -404 19 -46 55 -59 165 -59 l95 0 0 -49 c0 -80 57 -127 123 -102 46 18 59 60 55 177 -3 118 -17 142 -83 153 l-36 6 151 138 c134 123 152 136 168 125 10 -7 80 -69 155 -138 l137 -125 -37 -6 c-22 -4 -46 -17 -60 -33 -23 -27 -23 -31 -23 -272 0 -157 4 -253 11 -266 6 -11 26 -26 45 -34 30 -12 39 -12 69 0 21 9 39 26 45 41 6 15 10 107 10 206 l0 179 90 0 c114 0 153 15 170 64 9 28 9 41 -2 63 -17 36 -574 540 -602 545 -11 2 -31 2 -43 0z" />
+                        <path
+                            d="M1790 2505 c-177 -32 -186 -35 -214 -66 -28 -32 -29 -34 -22 -119 3 -47 4 -89 1 -92 -3 -3 -36 15 -73 39 -58 39 -72 44 -106 40 -51 -7 -72 -29 -205 -217 -98 -137 -111 -160 -111 -197 0 -48 27 -86 97 -134 26 -18 41 -35 36 -40 -5 -5 -36 -14 -68 -20 -80 -15 -109 -31 -129 -73 -16 -34 -15 -43 19 -247 48 -283 52 -288 206 -275 43 4 79 4 79 -1 0 -4 -18 -34 -40 -67 -44 -65 -53 -123 -24 -164 8 -12 92 -77 185 -143 145 -104 176 -122 208 -122 52 0 74 15 122 79 22 30 46 53 52 51 6 -2 17 -33 23 -69 16 -85 25 -102 69 -122 34 -17 43 -16 251 18 228 37 241 41 271 99 12 24 12 41 3 103 -6 42 -9 78 -6 81 3 3 34 -13 69 -36 35 -22 73 -41 85 -41 32 0 71 21 77 42 8 24 19 23 34 -4 17 -30 211 -198 256 -222 57 -30 99 -16 168 56 34 35 63 58 71 55 8 -3 24 -35 36 -71 14 -43 32 -74 51 -90 51 -43 80 -42 229 10 168 58 186 67 210 107 25 41 25 83 -1 152 -29 77 -20 87 64 69 75 -16 122 -6 160 34 22 23 32 52 57 177 35 175 36 190 10 232 -23 38 -58 58 -120 68 -82 13 -99 35 -58 71 11 10 34 39 50 63 35 55 37 104 6 148 -36 50 -243 220 -277 228 -50 11 -96 -12 -149 -71 -34 -38 -54 -53 -65 -48 -9 3 -25 34 -37 68 -11 36 -33 75 -49 90 -47 45 -79 43 -241 -13 -80 -28 -146 -51 -146 -51 -1 0 -5 15 -8 34 -12 62 -52 81 -143 65 -36 -6 -68 -8 -73 -3 -5 5 9 35 31 68 49 72 55 97 37 143 -11 31 -41 57 -173 151 -88 63 -172 120 -187 128 -59 31 -113 7 -168 -74 -19 -29 -40 -52 -47 -52 -7 0 -15 17 -18 38 -13 75 -26 112 -49 138 -33 40 -96 39 -316 -1z m195 -215 c19 -96 35 -112 134 -136 98 -23 128 -19 170 24 20 20 43 48 52 61 l15 24 97 -72 97 -71 -35 -51 c-49 -72 -48 -111 8 -200 60 -97 86 -108 210 -86 51 10 95 17 98 17 3 0 4 -13 1 -29 -2 -16 6 -59 18 -96 29 -88 23 -96 -66 -79 -95 17 -160 -7 -183 -69 -20 -55 -64 -315 -57 -341 12 -48 56 -82 122 -96 67 -14 94 -26 94 -42 0 -6 -18 -31 -41 -55 -22 -24 -45 -57 -50 -72 l-10 -27 -38 35 c-20 20 -63 53 -93 74 -78 53 -116 52 -208 -3 -92 -54 -107 -83 -93 -172 6 -35 10 -64 9 -65 -1 -1 -54 -11 -118 -21 l-117 -18 -5 20 c-3 12 -6 30 -6 40 0 30 -39 103 -58 111 -9 4 -52 16 -95 26 -96 23 -127 14 -180 -55 -20 -26 -39 -47 -42 -48 -4 0 -49 30 -100 67 l-93 67 36 51 c50 70 50 111 -3 195 -59 97 -74 105 -166 98 l-76 -6 -16 99 c-24 145 -26 138 39 146 81 10 110 39 135 140 27 106 18 139 -51 190 -28 20 -50 40 -50 44 0 4 30 49 66 100 41 58 70 89 77 84 7 -3 31 -19 54 -35 61 -41 100 -38 188 17 88 54 101 78 91 170 -4 36 -5 65 -4 66 48 10 207 37 217 36 9 -1 19 -23 26 -57z m1208 -574 c23 -71 57 -99 145 -119 93 -21 133 -10 189 51 l42 45 55 -47 c31 -26 56 -52 56 -56 0 -5 -13 -24 -29 -42 -59 -69 -63 -97 -26 -203 32 -92 50 -106 168 -130 22 -4 26 -10 23 -28 -3 -12 -10 -47 -16 -78 l-11 -57 -37 9 c-20 5 -57 9 -82 9 -42 0 -48 -4 -107 -65 -74 -78 -84 -111 -59 -193 10 -30 14 -58 9 -62 -11 -9 -134 -53 -137 -48 -2 1 -11 26 -20 55 -18 54 -60 99 -99 107 -12 3 -45 10 -74 16 -71 16 -112 1 -162 -57 l-39 -46 -56 48 c-31 26 -56 51 -56 56 0 5 13 23 29 41 38 44 51 71 51 105 0 27 -31 128 -51 165 -13 24 -57 46 -119 59 -45 10 -51 14 -47 33 3 11 10 46 17 77 l11 55 53 -9 c86 -16 117 -5 180 63 67 73 76 108 52 188 -10 30 -14 58 -9 62 9 9 113 49 129 49 6 1 18 -23 27 -53z" />
+                        <path
+                            d="M1924 2030 c-117 -16 -209 -62 -289 -144 -98 -100 -145 -212 -145 -343 0 -281 217 -503 491 -503 222 0 415 140 479 349 24 75 26 201 6 276 -63 239 -300 398 -542 365z m198 -208 c62 -31 119 -87 149 -148 20 -41 24 -64 24 -139 0 -105 -19 -155 -86 -222 -66 -67 -118 -88 -224 -88 -78 0 -97 4 -141 27 -130 69 -199 222 -164 367 21 89 105 181 197 216 59 22 187 15 245 -13z" />
+                        <path
+                            d="M3205 1501 c-148 -39 -234 -195 -191 -345 32 -109 147 -196 261 -196 142 0 275 133 275 275 0 93 -69 204 -153 247 -45 22 -142 32 -192 19z m114 -186 c78 -40 54 -153 -37 -171 -27 -6 -37 -1 -67 29 -49 49 -42 111 16 143 31 17 54 17 88 -1z" />
+                    </g>
+                </svg>
+                <p>texto de prueba</p>
+            </div>
+            <div class="flex flex-row justify-start items-center">
+                <svg version="1.0" class="size-30" xmlns="http://www.w3.org/2000/svg" width="363.000000pt"
+                    height="363.000000pt" viewBox="0 0 363.000000 363.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,363.000000) scale(0.050000,-0.050000)" fill="#ffffff"
+                        stroke="none">
+                        <path
+                            d="M3070 6807 c-749 -62 -1427 -215 -2085 -471 l-205 -79 0 -1456 c0 -1745 13 -1931 169 -2346 209 -559 590 -928 1481 -1434 558 -317 782 -456 993 -615 l195 -147 186 137 c247 182 422 292 936 584 1150 655 1488 1036 1663 1873 45 213 46 245 52 1810 l7 1593 -206 80 c-967 376 -2175 554 -3186 471z m1417 -336 c605 -85 1368 -276 1619 -405 l57 -28 -9 -1464 c-9 -1567 -10 -1590 -115 -1909 -192 -583 -517 -899 -1486 -1444 -457 -258 -614 -351 -789 -473 -153 -107 -135 -107 -288 0 -177 123 -348 225 -796 477 -1070 603 -1380 943 -1544 1695 -40 180 -42 264 -50 1654 l-9 1463 57 29 c91 47 547 190 811 255 364 89 646 133 1185 187 187 19 1150 -7 1357 -37z" />
+                        <path
+                            d="M3280 6178 c-539 -24 -1097 -121 -1630 -282 l-220 -66 0 -1370 c0 -1526 0 -1522 147 -1847 193 -425 444 -641 1303 -1122 193 -108 434 -249 537 -313 218 -137 202 -134 310 -60 46 31 331 199 633 372 1003 573 1255 826 1403 1413 l47 187 0 1369 0 1369 -150 48 c-763 240 -1551 340 -2380 302z m555 -519 c1207 -151 1932 -1438 1425 -2531 -646 -1396 -2590 -1418 -3260 -38 -617 1274 433 2745 1835 2569z" />
+                        <path
+                            d="M4560 4778 c-27 -11 -340 -309 -695 -663 l-644 -644 -246 242 c-315 312 -451 354 -616 189 -186 -186 -139 -294 336 -766 568 -565 450 -597 1442 391 823 818 859 862 833 1015 -32 186 -236 304 -410 236z" />
+                    </g>
+                </svg>
+                <p>texto de prueba</p>
+            </div>
+            <div class="flex flex-row justify-start items-center">
+                <svg version="1.0" class="size-30" xmlns="http://www.w3.org/2000/svg" width="225.000000pt"
+                    height="225.000000pt" viewBox="0 0 225.000000 225.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,225.000000) scale(0.066667,-0.066667)" fill="#ffffff"
+                        stroke="none">
+                        <path
+                            d="M1493 2923 c-1039 -133 -1641 -1305 -1163 -2263 120 -240 25 -224 1365 -224 1354 0 1227 -26 1373 277 224 463 193 1012 -84 1481 -74 124 -60 128 -189 -43 l-107 -142 51 -86 c165 -273 177 -712 29 -1033 l-51 -110 -1002 -1 c-551 -1 -1015 -4 -1030 -7 -79 -14 -181 331 -182 616 -3 923 975 1507 1757 1049 l66 -39 150 107 c176 127 166 104 69 169 -301 200 -699 294 -1052 249z" />
+                        <path
+                            d="M2655 2401 c-54 -39 -337 -231 -630 -428 -651 -436 -644 -430 -665 -572 -56 -361 368 -492 578 -178 210 313 820 1244 818 1246 -2 1 -47 -30 -101 -68z" />
+                    </g>
+                </svg>
+                <p>texto de prueba</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Seccion tarjetas-->
+    <section class="flex flex-col bg-indigo-900/50 p-4 gap-4 items-center text-lg text-white font-bold">
+        <div class="flex flex-row w-full gap-4 justify-center">
+            <div class="flex flex-col bg-black/50 p-2 h-40 lg:h-80 w-30 lg:w-60 rounded-lg overflow-y-auto">
+            </div>
+            <div class="flex flex-col bg-black/50 p-2 h-40 lg:h-80 w-30 lg:w-60 rounded-lg overflow-y-auto">
+
+            </div>
+            <div class="flex flex-col bg-black/50 p-2 h-40 lg:h-80 w-30 lg:w-60 rounded-lg overflow-y-auto">
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--Contacto-->
+    <section class="flex flex-col bg-black p-4 justify-center">
+    </section>
 </body>
+
 </html>
