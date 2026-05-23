@@ -30,10 +30,10 @@
             <a href="#Inicio" data-target="Inicio"
                 class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">INICIO</a>
             <a href="#Producto" data-target="Producto"
-                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">PRODUCTOS</a>
+                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">PRECIO</a>
             <a href="#Contacto" data-target="Contacto"
                 class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">CONTACTO</a>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            <svg id="User" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor"
                 class="size-10 bg-black rounded-full hover:scale-115 transition delay-50 duration-250 cursor-pointer">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -120,15 +120,24 @@
             <div class="flex flex-row justify-center gap-4 min-w-max p-2">
 
                 <div
-                    class="shrink-0 flex flex-col bg-white/20 p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
+                    class="shrink-0 flex flex-col items-center bg-white/20 p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
+                    <h1 class="lg:text-xl font-bold">Servidores</h1>
+                    <p>texto texto</p>
+                    <p>texto texto</p>
                 </div>
 
                 <div
-                    class="shrink-0 flex flex-col bg-white/20 p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
+                    class="shrink-0 flex flex-col items-center bg-white/20 p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
+                    <h1 class="lg:text-xl font-bold">Almacenamiento</h1>
+                    <p>texto texto</p>
+                    <p>texto texto</p>
                 </div>
 
                 <div
-                    class="shrink-0 flex flex-col bg-white/20 p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
+                    class="shrink-0 flex flex-col items-center bg-white/20 p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
+                    <h1 class="lg:text-xl font-bold">Desarrollo</h1>
+                    <p>texto texto</p>
+                    <p>texto texto</p>
                 </div>
             </div>
         </div>
@@ -139,14 +148,103 @@
     <section class="flex flex-col h-fit bg-black p-4 place-items-center text-xs lg:text-xl">
         <p> 2026 Hollow servers. Todos los derechos reservados</p>
     </section>
+
+    <!--Login-->
+    <div id="login" class="flex fixed inset-0 top-15 items-center justify-center z-20 bg-black/50  hidden">
+        <div
+            class="flex flex-col w-[75%] lg:w-[25%] gap-4 items-center bg-black p-4 rounded-lg text-white border-white border">
+            <h1 class="text-xl font-bold logElem">Iniciar Sesion</h1>
+            <input type="email" id="email" name="email" pattern=".+@gmail\.com" placeholder="Ingresar Correo"
+                class="p-2 border-2 border-white rounded-lg login">
+            <div class="flex flex-row items-center justify-end">
+                <input id="Ipass" type="password" name="password" placeholder="ingrese contraseña"
+                    class="p-2 border-2 border-white rounded-lg login">
+                <button id="btnp" type="button" class="absolute bg-white m-2 rounded-lg cursor-pointer hover:scale-110"
+                    onclick="contraseña()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-6 fill-black">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-row items-center gap-2">
+                <input id="Lbtn" type="button" value="Iniciar Sesion" name="btn"
+                    class="logElem bg-white p-2 rounded-lg cursor-pointer text-black font-bold hover:scale-105 transition delay-50 duration-200 ">
+                <btn id="registro" type="button"
+                    class="logElem p-2 rounded-lg cursor-pointer transition delay-50 duration-400 hover:bg-white hover:text-black font-bold">
+                    Registrarse</btn>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script>
     const menu_d = document.getElementById("menu-d");
 
-    function toggleMenu(){
+    function toggleMenu() {
         menu_d.classList.toggle("hidden");
     }
+
+    const btnLogin = document.getElementById("User");
+    const login = document.getElementById("login");
+
+    btnLogin.addEventListener("click", function () {
+        login.classList.toggle("hidden");
+    });
+
+    const inpPass = document.getElementById("Ipass");
+    function contraseña() {
+
+        if (inpPass.type === "password") {
+            inpPass.type = "text";
+        } else {
+            inpPass.type = "password";
+        }
+    }
+
+    //Cambiar de login a registro
+    const registro = document.getElementById("registro"); //Este seria el boton que dice registrase
+    registro.addEventListener("click", function () {  //Cuando hacemos click en el
+        const loginElemet = document.querySelectorAll(".logElem"); //Seleccionamos todos los elemetos del login que tengan la clase logElem
+
+        loginElemet.forEach(element => {  //Por cada elemento hacemos cosas
+            switch (element.tagName) {
+                case "H1":  //Si el elemento es el del titulo le cambiamos el texto
+                    if (element.textContent == "Iniciar Sesion") {
+                        element.textContent = "Registrarse";
+                    } else {
+                        element.textContent = "Iniciar Sesion"
+                    }
+                    break;
+                case "BTN":  //Es lo mismo con los demas elementos segun su etiqueta
+                    if (element.textContent.trim() == "Registrarse") {
+                        element.textContent = "Iniciar sesion";
+                    } else {
+                        element.textContent = "Registrarse"
+                    }
+                    break;
+
+                case "INPUT":
+                    switch (element.type) {
+                        case "button":
+                            if (element.value == "Iniciar Sesion") {
+                                element.value = "Registrarse";
+                            } else {
+                                element.value = "Iniciar Sesion"
+                            }
+                            break;
+                        default:
+                            alert("error");
+                            break;
+                    }
+                    break;
+                default:
+                    alert("error");
+                    break;
+            }
+        });
+    });
 </script>
 
 </html>
