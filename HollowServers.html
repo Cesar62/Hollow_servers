@@ -21,18 +21,19 @@
         </div>
         <div class="flex flex-row basis-full items-center justify-end gap-4 tracking-widest lg:mr-10">
             <button class="lg:hidden cursor-pointer" onclick="toggleMenu()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
                     </path>
                 </svg>
             </button>
             <a href="#Inicio" data-target="Inicio"
-                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">INICIO</a>
-            <a href="#Producto" data-target="Producto"
-                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">PRECIO</a>
+                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible  lg:inline-block hidden nav-link">INICIO</a>
+            <btn id="precio"
+                class="cursor-pointer hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible  lg:inline-block hidden nav-link">
+                PRECIO</btn>
             <a href="#Contacto" data-target="Contacto"
-                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible invisible md:inline-block hidden nav-link">CONTACTO</a>
+                class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible  lg:inline-block hidden nav-link">CONTACTO</a>
             <svg id="User" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor"
                 class="size-10 bg-black rounded-full hover:scale-115 transition delay-50 duration-250 cursor-pointer">
@@ -43,7 +44,7 @@
     </nav>
 
     <!--menu oculto-->
-    <div id="menu-d" class="hidden md:hidden absolute top-16 right-0 bg-black text-white w-full z-20">
+    <div id="menu-d" class="hidden lg:hidden absolute top-16 right-0 bg-black text-white w-full z-20">
         <a href="#Inicio" class="block px-4 py-2 hover:bg-gray-700">INICIO</a>
         <a href="#SobreMi" class="block px-4 py-2 hover:bg-gray-700">SOBRE MI</a>
         <a href="#Tecnologias" class="block px-4 py-2 hover:bg-gray-700">TECNOLOGÍAS</a>
@@ -114,30 +115,31 @@
     </section>
 
     <!--Seccion tarjetas-->
-    <div class="flex flex-col items-center p-2 bg-slate-700">
+    <div class="flex flex-col items-center p-2 bg-slate-700 text-xs lg:text-lg  ">
         <div class="w-full overflow-x-auto">
             <!--Con el overflow x se hace que se pueda scrollear cuando no hay espacio-->
-            <div class="flex flex-row justify-center gap-4 min-w-max p-2">
+            <div class="flex flex-row justify-center gap-4 min-w-max p-2 break-all">
+                <!--Con breal-all todas las palbras hacen salto de linea -->
 
                 <div
                     class="shrink-0 flex flex-col items-center bg-white/20 p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
-                    <h1 class="lg:text-xl font-bold">Servidores</h1>
+                    <h1 class="text-base lg:text-xl font-bold text-center">Servidores</h1>
                     <p>texto texto</p>
                     <p>texto texto</p>
                 </div>
 
                 <div
                     class="shrink-0 flex flex-col items-center bg-white/20 p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
-                    <h1 class="lg:text-xl font-bold">Almacenamiento</h1>
+                    <h1 class="text-base lg:text-xl font-bold text-center">Almacenamiento</h1>
                     <p>texto texto</p>
                     <p>texto texto</p>
                 </div>
 
                 <div
                     class="shrink-0 flex flex-col items-center bg-white/20 p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
-                    <h1 class="lg:text-xl font-bold">Desarrollo</h1>
+                    <h1 class="text-base lg:text-xl font-bold text-center">Desarrollo</h1>
                     <p>texto texto</p>
-                    <p>texto texto</p>
+                    <p>texto texto lore</p>
                 </div>
             </div>
         </div>
@@ -150,9 +152,15 @@
     </section>
 
     <!--Login-->
-    <div id="login" class="flex fixed inset-0 top-15 items-center justify-center z-20 bg-black/50  hidden">
-        <div
-            class="flex flex-col w-[75%] lg:w-[25%] gap-4 items-center bg-black p-4 rounded-lg text-white border-white border">
+    <section id="login" class="flex fixed inset-0 top-15 items-center justify-center z-20 bg-black/50  hidden">
+        <div id="loginBody"
+            class="flex flex-col relative w-[75%] lg:w-[25%] gap-4 items-center bg-black p-4 rounded-lg text-white border-white border">
+            <svg id="cerrarModal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 border-2 border-white rounded-lg hover:border-red-500 hover:scale-110 hover:stroke-red-500 hover:stroke-2 absolute right-2 top-2 cursor-pointer">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+
             <h1 class="text-xl font-bold logElem">Iniciar Sesion</h1>
             <input type="email" id="email" name="email" pattern=".+@gmail\.com" placeholder="Ingresar Correo"
                 class="p-2 border-2 border-white rounded-lg login">
@@ -176,7 +184,50 @@
                     Registrarse</btn>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!--Precios-->
+    <section id="precioM" class="flex flex-col p-4 gap-4 fixed inset-0 top-15 items-center z-20 bg-black/50  hidden">
+        <div class="flex flex-row p-2 gap-2 rounded-lg bg-white/50">
+            <h1
+                class="bg-gray-700 hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
+                Servidores</h1>
+            <h1
+                class="bg-gray-700 hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
+                Almacenamiento</h1>
+            <h1
+                class="bg-gray-700 hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
+                Desarrollo</h1>
+        </div>
+        <div class="w-full overflow-x-auto items-center">
+            <!--Con el overflow x se hace que se pueda scrollear cuando no hay espacio-->
+            <div class="flex flex-row justify-center min-w-max p-2 break-all">
+                <!--Con breal-all todas las palbras hacen salto de linea -->
+                <div id="preciosCuadro" class="flex flex-row p-4 gap-4 rounded-lg bg-white/50">
+                    <div
+                        class="shrink-0 flex flex-col items-center bg-black p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
+                        <h1 class="text-base lg:text-xl font-bold text-center">Basico</h1>
+                        <p>texto texto</p>
+                        <p>texto texto</p>
+                    </div>
+
+                    <div
+                        class="shrink-0 flex flex-col items-center bg-black p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
+                        <h1 class="text-base lg:text-xl font-bold text-center">Pro</h1>
+                        <p>texto texto</p>
+                        <p>texto texto</p>
+                    </div>
+
+                    <div
+                        class="shrink-0 flex flex-col items-center bg-black p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
+                        <h1 class="text-base lg:text-xl font-bold text-center">Master</h1>
+                        <p>texto texto</p>
+                        <p>texto texto lore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 <script>
@@ -189,9 +240,10 @@
     const btnLogin = document.getElementById("User");
     const login = document.getElementById("login");
 
-    btnLogin.addEventListener("click", function () {
+    btnLogin.addEventListener("click", function () { //Muestra el menu
         login.classList.toggle("hidden");
     });
+
 
     const inpPass = document.getElementById("Ipass");
     function contraseña() {
@@ -203,10 +255,26 @@
         }
     }
 
+    //Funcion para cerrar modales
+
+    const cerrarModal = document.getElementById("cerrarModal");
+    cerrarModal.addEventListener("click", function () {
+        login.classList.toggle("hidden");
+    });
+
+    //abrir precios
+    const precioBnt = document.getElementById("precio");
+    const precioM = document.getElementById("precioM");
+
+    precioBnt.addEventListener("click", function () {
+        precioM.classList.toggle("hidden");
+    });
+
+
     //Cambiar de login a registro
-    const registro = document.getElementById("registro"); //Este seria el boton que dice registrase
+    const registro = document.getElementById("registro"); //Este seria el boton que dice registrarse
     registro.addEventListener("click", function () {  //Cuando hacemos click en el
-        const loginElemet = document.querySelectorAll(".logElem"); //Seleccionamos todos los elemetos del login que tengan la clase logElem
+        const loginElemet = document.querySelectorAll(".logElem"); //Seleccionamos todos los elemenstos del login que tengan la clase logElem
 
         loginElemet.forEach(element => {  //Por cada elemento hacemos cosas
             switch (element.tagName) {
