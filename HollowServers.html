@@ -575,33 +575,23 @@
     const preciosBTN = document.querySelectorAll(".preciosBTN"); //Estos son los botones del menu de precios
     preciosBTN.forEach(function (cambiarPrecios) {  //Aqui se hace el bucle con todos pero como solo se hace click con uno a la vez no hay problema
         cambiarPrecios.addEventListener("click", function () { //Entonces cuando le doy click a cualquiera de ellos
-            switch (cambiarPrecios.textContent.trim()) { //Vamos revisando cual pulsamos segun el texto que tiene le puse trim porque aqui en el html tiene espacios y sin eso no funcioa
-                case "Servidores":
-                    alert("Servidores");
-                    break;
-                case "Almacenamiento":
-                    preciosBTN.forEach(element =>{ //Volvemos a hacer el bucle para cambiar clases de los otros botones
-                        if(element.textContent.trim() != "Almacenamiento"){ //Ignoramos el boton que pulsamos
-                            element.classList.replace("bg-white", "bg-gray-700"); //vamos cambiando las clases de los botones
-                            element.classList.replace("text-black", "text-white");
-                            element.classList.replace("hover:text-white", "hover:text-black");
-                            element.classList.replace("border-black", "border-white");
-                            element.classList.replace("hover:border-white", "hover:border-black");
-                            element.classList.replace("hover:bg-black", "hover:bg-white");
-                        }else{
-                            element.classList.replace("bg-gray-700", "bg-white");
-                            element.classList.replace("text-white", "text-black");
-                            element.classList.replace("hover:text-black", "hover:text-white");
-                            element.classList.replace("border-white", "border-black");
-                            element.classList.replace("hover:border-black", "hover:border-white");
-                            element.classList.replace("hover:bg-white", "hover:bg-black");
-                        }
-                    });
-                    break;
-                case "Desarrollo":
-                    alert("Desarrollo");
-                    break;
-            }
+            preciosBTN.forEach(element => { //Volvemos a hacer el bucle para cambiar clases de los otros botones
+                if (element.textContent.trim() != cambiarPrecios.textContent.trim()) { //Ignoramos el boton que pulsamos
+                    element.classList.replace("bg-white", "bg-gray-700"); //vamos cambiando las clases de los botones
+                    element.classList.replace("text-black", "text-white");
+                    element.classList.replace("hover:text-white", "hover:text-black");
+                    element.classList.replace("border-black", "border-white");
+                    element.classList.replace("hover:border-white", "hover:border-black");
+                    element.classList.replace("hover:bg-black", "hover:bg-white");
+                } else {
+                    element.classList.replace("bg-gray-700", "bg-white");
+                    element.classList.replace("text-white", "text-black");
+                    element.classList.replace("hover:text-black", "hover:text-white");
+                    element.classList.replace("border-white", "border-black");
+                    element.classList.replace("hover:border-black", "hover:border-white");
+                    element.classList.replace("hover:bg-white", "hover:bg-black");
+                }
+            });
         });
     });
 </script>
