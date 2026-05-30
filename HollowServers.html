@@ -29,7 +29,7 @@
             </button>
             <a href="#Inicio" data-target="Inicio"
                 class="hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible  lg:inline-block hidden nav-link">INICIO</a>
-            <btn id="precio"
+            <btn id="precio" onclick="togglePrecio()"
                 class="cursor-pointer hover:text-gray-600 hover:bg-white transition delay-50 duration-500 rounded-lg p-2 lg:visible  lg:inline-block hidden nav-link">
                 PRECIO</btn>
             <a href="#Contacto" data-target="Contacto"
@@ -47,6 +47,8 @@
     <div id="menu-d" class="hidden lg:hidden absolute top-16 right-0 bg-black text-white w-full z-20">
         <a href="#Inicio" class="block px-4 py-2 hover:bg-gray-700">INICIO</a>
         <a href="#SobreMi" class="block px-4 py-2 hover:bg-gray-700">SOBRE MI</a>
+        <btn id="precio" onclick="togglePrecio()" class="block px-4 py-2 hover:bg-gray-700 cursor-pointer">
+            PRECIO</btn>
         <a href="#Tecnologias" class="block px-4 py-2 hover:bg-gray-700">TECNOLOGÍAS</a>
     </div>
 
@@ -54,14 +56,14 @@
     <div class="h-15"></div>
 
     <!--Inicio-->
-    <section class="flex flex-col lg:flex-row bg-slate-800 p-4 items-center text-sm lg:text-xl text-white font-bold">
+    <section class="flex flex-col lg:flex-col bg-slate-800 p-4 items-center text-sm lg:text-xl text-white font-bold">
         <div class="flex flex-col p-4 gap-4 lg:ml-10">
-            <h1 class="text-2xl lg:text-4xl">Necesitas llevar tu idea al mundo</h1>
+            <h1 class="text-2xl lg:text-4xl text-center">Necesitas llevar tu idea al mundo</h1>
             <p>Hazlo ahora con hollow servers, publica desde pequeñas api hasta una aplicación completa, los limites son
                 solo tu creatividad.</p>
         </div>
-        <div class="flex flex-col w-full gap-4">
-            <div class="flex flex-row justify-start items-center gap-2">
+        <div class="flex flex-row w-full justify-center gap-4 lg:text-center">
+            <div class="flex flex-col w-[25%] justify-start items-center gap-2">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="308.000000pt" height="402.000000pt"
                     class="size-10 lg:size-20" viewBox="0 0 308.000000 402.000000" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,402.000000) scale(0.050000,-0.050000)" fill="#ffffff"
@@ -80,7 +82,7 @@
                 </svg>
                 <p>Componentes segun tus necesidades</p>
             </div>
-            <div class="flex flex-row justify-start items-center gap-2">
+            <div class="flex flex-col w-[25%] justify-start items-center gap-2">
                 <?xml version="1.0" standalone="no"?>
                 <!DOCTYPE svg
                     PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
@@ -98,7 +100,7 @@
                 </svg>
                 <p>Infraestructura robusta, tu sistema siempre en linea</p>
             </div>
-            <div class="flex flex-row justify-start items-center gap-2">
+            <div class="flex flex-col w-[25%] justify-start items-center gap-2">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="225.000000pt" height="178.000000pt"
                     class="size-10 lg:size-20" viewBox="0 0 225.000000 178.000000" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,178.000000) scale(0.066667,-0.066667)" fill="#ffffff"
@@ -148,16 +150,16 @@
 
     <!--Contacto-->
     <section class="flex flex-col h-fit bg-black p-4 place-items-center text-xs lg:text-xl">
-        <p> 2026 Hollow servers. Todos los derechos reservados</p>
+        <p>&copy; 2026 Hollow servers . Todos los derechos reservados</p>
     </section>
 
     <!--Login-->
     <section id="login" class="flex fixed inset-0 top-15 items-center justify-center z-20 bg-black/50  hidden">
         <div id="loginBody"
             class="flex flex-col relative w-[75%] lg:w-[25%] gap-4 items-center bg-black p-4 rounded-lg text-white border-white border">
-            <svg id="cerrarModal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6 border-2 border-white rounded-lg hover:border-red-500 hover:scale-110 hover:stroke-red-500 hover:stroke-2 absolute right-2 top-2 cursor-pointer">
+                class="cerrarModal size-6 border-2 border-white rounded-lg hover:border-red-500 hover:scale-110 hover:stroke-red-500 hover:stroke-2 absolute right-2 top-2 cursor-pointer">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
 
@@ -187,42 +189,290 @@
     </section>
 
     <!--Precios-->
-    <section id="precioM" class="flex flex-col p-4 gap-4 fixed inset-0 top-15 items-center z-20 bg-black/50  hidden">
+    <section id="precioM"
+        class="flex flex-col p-4 gap-4 fixed inset-0 top-15 items-center justify-center z-20 bg-black/50 backdrop-blur-md hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="cerrarModal size-15 border-2 border-white rounded-lg hover:border-red-500 hover:scale-110 hover:stroke-red-500 hover:stroke-2 cursor-pointer self-end">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
         <div class="flex flex-row p-2 gap-2 rounded-lg bg-white/50">
             <h1
-                class="bg-gray-700 hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
+                class="preciosBTN bg-white text-black hover:bg-black font-bold hover:text-white border-2 rounded-lg p-2 border-black hover:border-white cursor-pointer">
                 Servidores</h1>
             <h1
-                class="bg-gray-700 hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
+                class="preciosBTN bg-gray-700 text-white hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
                 Almacenamiento</h1>
             <h1
-                class="bg-gray-700 hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
+                class="preciosBTN bg-gray-700 text-white hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
                 Desarrollo</h1>
         </div>
-        <div class="w-full overflow-x-auto items-center">
+        <div class="w-full items-center p-4">
             <!--Con el overflow x se hace que se pueda scrollear cuando no hay espacio-->
-            <div class="flex flex-row justify-center min-w-max p-2 break-all">
+            <div class="justify-center w-full justify-center overflow-x-auto bg-black rounded-lg border-2 border-white">
                 <!--Con breal-all todas las palbras hacen salto de linea -->
-                <div id="preciosCuadro" class="flex flex-row p-4 gap-4 rounded-lg bg-white/50">
+                <div id="preciosCuadro" class="flex flex-row justify-start text-sm lg:justify-center p-6 gap-4">
                     <div
-                        class="shrink-0 flex flex-col items-center bg-black p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
-                        <h1 class="text-base lg:text-xl font-bold text-center">Basico</h1>
-                        <p>texto texto</p>
-                        <p>texto texto</p>
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        <h1
+                            class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
+                            Gratis</h1>
+                        <p class="text-xl font-bold">$0/mes</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            1vCPU</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>512MB RAM</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>10GB SSD</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>100GB Transferencia</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>Subdominios Gratuitos</P>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>SSL Gratuito</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                            Soporte</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                            Copias de seguridad automaticas</p>
+                        <button
+                            class="self-center border-2 border-white p-2 rounded-lg cursor-pointer hover:scale-105 transition delay-50 duration-300 group">Empezar
+                            Gratis
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-4 inline group-hover:-translate-y-1 group-hover:translate-x-1 transition delay-50 duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </button>
+
                     </div>
 
                     <div
-                        class="shrink-0 flex flex-col items-center bg-black p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
-                        <h1 class="text-base lg:text-xl font-bold text-center">Pro</h1>
-                        <p>texto texto</p>
-                        <p>texto texto</p>
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        <h1
+                            class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
+                            Basico</h1>
+                        <p class="text-xl font-bold">$10/mes</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            1vCPU</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>1GB RAM</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>25GB SSD</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>500GB Transferencia</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>1 Dominio Gratuito</P>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>SSL Gratuito</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            Soporte por correo</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                            Copias de seguridad automaticas</p>
+                        <button
+                            class="self-center border-2 border-white p-2 rounded-lg cursor-pointer hover:scale-105 transition delay-50 duration-300 group">Ver
+                            plan
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-4 inline group-hover:-translate-y-1 group-hover:translate-x-1 transition delay-50 duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </button>
                     </div>
 
                     <div
-                        class="shrink-0 flex flex-col items-center bg-black p-2 h-40 lg:h-80 w-32 lg:w-60 rounded-lg overflow-y-auto">
-                        <h1 class="text-base lg:text-xl font-bold text-center">Master</h1>
-                        <p>texto texto</p>
-                        <p>texto texto lore</p>
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        <h1
+                            class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
+                            Estandar</h1>
+                        <p class="text-xl font-bold">$20/mes</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            2vCPU</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>3GB RAM</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>50GB SSD</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>1TB Transferencia</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>3 Dominios Gratuitos</P>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>SSL Gratuito</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            Soporte 24/7</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            Copias de seguridad automaticas</p>
+                        <button
+                            class="self-center border-2 border-white p-2 rounded-lg cursor-pointer hover:scale-105 transition delay-50 duration-300 group">Ver
+                            plan
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-4 inline group-hover:-translate-y-1 group-hover:translate-x-1 transition delay-50 duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        <h1
+                            class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
+                            Profesional</h1>
+                        <p class="text-xl font-bold">$35/mes</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            4vCPU</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>8GB RAM</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>100GB SSD</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>2TB Transferencia</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>7 Dominios Gratuitos</P>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>SSL Gratuito + Panel avanzado</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            Soporte 24/7</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            Copias de seguridad Diarias</p>
+                        <button
+                            class="self-center border-2 border-white p-2 rounded-lg cursor-pointer hover:scale-105 transition delay-50 duration-300 group">Ver
+                            plan
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-4 inline group-hover:-translate-y-1 group-hover:translate-x-1 transition delay-50 duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        <h1
+                            class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
+                            Empresarial</h1>
+                        <p class="text-xl font-bold">$100/mes</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            8vCPU</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>16GB RAM</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>1TB SSD</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>Transferencia sin limites</p>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>12 Dominios Gratuitos</P>
+                        <P><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>SLA 99.9%</P>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            Soporte 24/7</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-4 inline">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            Copias de seguridad automaticas</p>
+                        <button
+                            class="self-center border-2 border-white p-2 rounded-lg cursor-pointer hover:scale-105 transition delay-50 duration-300 group">Ver
+                            plan
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-4 inline group-hover:-translate-y-1 group-hover:translate-x-1 transition delay-50 duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -255,20 +505,27 @@
         }
     }
 
-    //Funcion para cerrar modales
-
-    const cerrarModal = document.getElementById("cerrarModal");
-    cerrarModal.addEventListener("click", function () {
-        login.classList.toggle("hidden");
-    });
 
     //abrir precios
-    const precioBnt = document.getElementById("precio");
     const precioM = document.getElementById("precioM");
-
-    precioBnt.addEventListener("click", function () {
+    function togglePrecio() {
         precioM.classList.toggle("hidden");
+    }
+
+    //Funcion para cerrar modales
+    const cerrarModal = document.querySelectorAll(".cerrarModal");
+    cerrarModal.forEach(function (btncerrar) {
+        btncerrar.addEventListener("click", function () {
+            if (!login.classList.contains("hidden")) {
+                login.classList.toggle("hidden");
+            }
+            if (!precioM.classList.contains("hidden")) {
+                precioM.classList.toggle("hidden");
+            }
+        });
     });
+
+
 
 
     //Cambiar de login a registro
@@ -309,6 +566,40 @@
                     break;
                 default:
                     alert("error");
+                    break;
+            }
+        });
+    });
+
+    //Funciones para cambiar los precios
+    const preciosBTN = document.querySelectorAll(".preciosBTN"); //Estos son los botones del menu de precios
+    preciosBTN.forEach(function (cambiarPrecios) {  //Aqui se hace el bucle con todos pero como solo se hace click con uno a la vez no hay problema
+        cambiarPrecios.addEventListener("click", function () { //Entonces cuando le doy click a cualquiera de ellos
+            switch (cambiarPrecios.textContent.trim()) { //Vamos revisando cual pulsamos segun el texto que tiene le puse trim porque aqui en el html tiene espacios y sin eso no funcioa
+                case "Servidores":
+                    alert("Servidores");
+                    break;
+                case "Almacenamiento":
+                    preciosBTN.forEach(element =>{ //Volvemos a hacer el bucle para cambiar clases de los otros botones
+                        if(element.textContent.trim() != "Almacenamiento"){ //Ignoramos el boton que pulsamos
+                            element.classList.replace("bg-white", "bg-gray-700"); //vamos cambiando las clases de los botones
+                            element.classList.replace("text-black", "text-white");
+                            element.classList.replace("hover:text-white", "hover:text-black");
+                            element.classList.replace("border-black", "border-white");
+                            element.classList.replace("hover:border-white", "hover:border-black");
+                            element.classList.replace("hover:bg-black", "hover:bg-white");
+                        }else{
+                            element.classList.replace("bg-gray-700", "bg-white");
+                            element.classList.replace("text-white", "text-black");
+                            element.classList.replace("hover:text-black", "hover:text-white");
+                            element.classList.replace("border-white", "border-black");
+                            element.classList.replace("hover:border-black", "hover:border-white");
+                            element.classList.replace("hover:bg-white", "hover:bg-black");
+                        }
+                    });
+                    break;
+                case "Desarrollo":
+                    alert("Desarrollo");
                     break;
             }
         });
