@@ -9,7 +9,7 @@
     <title>Hollow_servers</title>
 </head>
 
-<body class="text-white bg-black">
+<body class="text-white bg-black h-screen">
 
     <!--Navbar -->
     <nav class="flex flex-row z-10 fixed bg-black p-2 w-full text-white font-bold lg:text-xl text-lg">
@@ -190,9 +190,9 @@
 
     <!--Precios-->
     <section id="precioM"
-        class="flex flex-col p-4 gap-4 fixed inset-0 top-15 items-center justify-center z-20 bg-black/50 backdrop-blur-md hidden">
+        class="flex flex-col p-4 gap-4 fixed inset-0 top-15 items-center justify-start lg:justify-center z-20 bg-black/50 backdrop-blur-md hidden">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="cerrarModal size-15 border-2 border-white rounded-lg hover:border-red-500 hover:scale-110 hover:stroke-red-500 hover:stroke-2 cursor-pointer self-end">
+            class="cerrarModal size-6 lg:size-10 border-2 border-white rounded-lg hover:border-red-500 hover:scale-110 hover:stroke-red-500 hover:stroke-2 cursor-pointer self-end">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
         </svg>
         <div class="flex flex-row p-2 gap-2 rounded-lg bg-white/50">
@@ -206,13 +206,13 @@
                 class="preciosBTN bg-gray-700 text-white hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
                 Desarrollo</h1>
         </div>
-        <div class="w-full items-center p-4">
+        <div class="w-full items-center lg:p-4">
             <!--Con el overflow x se hace que se pueda scrollear cuando no hay espacio-->
-            <div class="justify-center w-full justify-center overflow-x-auto bg-black rounded-lg border-2 border-white">
+            <div class="justify-center max-h-screen lg:h-auto w-full justify-center overflow-y-auto lg:overflow-x-auto bg-black rounded-lg border-2 border-white">
                 <!--Con breal-all todas las palbras hacen salto de linea -->
-                <div id="preciosCuadro" class="flex flex-row justify-start text-sm lg:justify-center p-6 gap-4">
+                <div id="preciosCuadro" class="flex flex-col lg:flex-row items-center text-sm lg:justify-center p-6 gap-4">
                     <div
-                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-auto w-52 lg:w-60 border border-white rounded-lg overflow-y-auto">
                         <h1
                             class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
                             Gratis</h1>
@@ -266,7 +266,7 @@
                     </div>
 
                     <div
-                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-auto w-52 lg:w-60 border border-white rounded-lg overflow-y-auto">
                         <h1
                             class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
                             Basico</h1>
@@ -319,7 +319,7 @@
                     </div>
 
                     <div
-                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-auto w-52 lg:w-60 border border-white rounded-lg overflow-y-auto">
                         <h1
                             class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
                             Estandar</h1>
@@ -367,11 +367,11 @@
                                 class="size-4 inline group-hover:-translate-y-1 group-hover:translate-x-1 transition delay-50 duration-300">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                            </svg>
+                            </svg>,
                         </button>
                     </div>
                     <div
-                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-auto w-52 lg:w-60 border border-white rounded-lg overflow-y-auto">
                         <h1
                             class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
                             Profesional</h1>
@@ -423,7 +423,7 @@
                         </button>
                     </div>
                     <div
-                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-50 lg:h-auto w-32 lg:w-60 border border-white rounded-lg overflow-y-auto">
+                        class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-auto w-52 lg:w-60 border border-white rounded-lg overflow-y-auto">
                         <h1
                             class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
                             Empresarial</h1>
