@@ -208,8 +208,14 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
   .top-2 {
     top: calc(var(--spacing) * 2);
+  }
+  .top-5 {
+    top: calc(var(--spacing) * 5);
   }
   .top-15 {
     top: calc(var(--spacing) * 15);
@@ -231,6 +237,9 @@
   }
   .m-2 {
     margin: calc(var(--spacing) * 2);
+  }
+  .mt-auto {
+    margin-top: auto;
   }
   .ml-5 {
     margin-left: calc(var(--spacing) * 5);
@@ -303,9 +312,6 @@
   .w-full {
     width: 100%;
   }
-  .max-w-\[280px\] {
-    max-width: 280px;
-  }
   .min-w-max {
     min-width: max-content;
   }
@@ -363,11 +369,23 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
+  .place-self-end {
+    place-self: end;
+  }
   .self-center {
     align-self: center;
   }
   .self-end {
     align-self: flex-end;
+  }
+  .justify-self-end {
+    justify-self: flex-end;
+  }
+  .justify-self-start {
+    justify-self: flex-start;
+  }
+  .justify-self-stretch {
+    justify-self: stretch;
   }
   .overflow-x-auto {
     overflow-x: auto;
@@ -440,35 +458,8 @@
       background-color: color-mix(in oklab, var(--color-white) 50%, transparent);
     }
   }
-  .bg-\[url\(\'\'\)\] {
-    background-image: url('');
-  }
-  .bg-\[url\(\'\.\.\/img\/Server\.webp\'\)\] {
-    background-image: url('../img/Server.webp');
-  }
   .bg-\[url\(\'\.\.\/img\/Servers\.webp\'\)\] {
     background-image: url('../img/Servers.webp');
-  }
-  .bg-\[url\(\'\.\.\/img\/blanco\.jpeg\'\)\] {
-    background-image: url('../img/blanco.jpeg');
-  }
-  .bg-\[url\(\'\/home\/cesaremanuelgonzalez946\/HollowServers\/img\/Servers\.webp\'\)\] {
-    background-image: url('/home/cesaremanuelgonzalez946/HollowServers/img/Servers.webp');
-  }
-  .bg-\[url\(\'\/img\/blanco\.jpeg\'\)\] {
-    background-image: url('/img/blanco.jpeg');
-  }
-  .bg-\[url\(\'\/img\/rendimiento\.png\'\)\] {
-    background-image: url('/img/rendimiento.png');
-  }
-  .bg-\[url\(\'img\/Servers\.webp\'\)\] {
-    background-image: url('img/Servers.webp');
-  }
-  .bg-\[url\(\'img\/blanco\.jpeg\'\)\] {
-    background-image: url('img/blanco.jpeg');
-  }
-  .bg-\[url\(\'img\/rendimiento\.png\'\)\] {
-    background-image: url('img/rendimiento.png');
   }
   .bg-cover {
     background-size: cover;
@@ -783,6 +774,11 @@
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
+    }
+  }
+  .md\:items-stretch {
+    @media (width >= 48rem) {
+      align-items: stretch;
     }
   }
   .lg\:visible {
