@@ -225,20 +225,23 @@
     <!--Precios-->
     <section id="precioM"
         class="flex flex-col p-4 gap-4 fixed inset-0 top-15 items-center justify-center z-20 bg-black/50 backdrop-blur-md hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="cerrarModal size-6 lg:size-15 border-2 border-white rounded-lg hover:border-red-500 hover:scale-110 hover:stroke-red-500 hover:stroke-2 cursor-pointer self-end">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>
-        <div class="flex flex-row p-2 gap-2 rounded-lg bg-white/50">
-            <h1 id="btnServer"
-                class="preciosBTN bg-white text-black hover:bg-black font-bold hover:text-white border-2 rounded-lg p-2 border-black hover:border-white cursor-pointer">
-                Servidores</h1>
-            <h1 id="btnAlma"
-                class="preciosBTN bg-gray-700 text-white hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
-                Almacenamiento</h1>
-            <h1 id="btnDev"
-                class="preciosBTN bg-gray-700 text-white hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
-                Desarrollo</h1>
+        <div class="flex flex-row items-center gap-2 ">
+            <div class="flex flex-row p-2 gap-2 rounded-lg bg-white/50 text-xs md:text-lg">
+                <h1 id="btnServer"
+                    class="preciosBTN bg-white text-black hover:bg-black font-bold hover:text-white border-2 rounded-lg p-2 border-black hover:border-white cursor-pointer">
+                    Servidores</h1>
+                <h1 id="btnAlma"
+                    class="preciosBTN bg-gray-700 text-white hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
+                    Almacenamiento</h1>
+                <h1 id="btnDev"
+                    class="preciosBTN bg-gray-700 text-white hover:bg-white font-bold hover:text-black border-2 rounded-lg p-2 border-white hover:border-black cursor-pointer">
+                    Desarrollo</h1>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor"
+                class="cerrarModal size-6 lg:size-8 justify-self-end-safe border-2 border-white rounded-lg hover:border-red-500 hover:scale-110 hover:stroke-red-500 hover:stroke-2 cursor-pointer">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
         </div>
         <div class="w-full items-center p-4">
             <!--Con el overflow x se hace que se pueda scrollear cuando no hay espacio-->
@@ -912,7 +915,7 @@
                                 stroke="currentColor" class="size-4 inline">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                             </svg>
-                           Sistema con roles y accesos</p>
+                            Sistema con roles y accesos</p>
                         <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="size-4 inline">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
@@ -953,7 +956,7 @@
                         class="shrink-0 flex flex-col items-start bg-white/10 p-4 gap-2 h-auto w-full md:w-60 border border-white rounded-lg overflow-y-auto snap-center">
                         <h1
                             class="text-base lg:text-base font-bold text-center text-black w-full px-2 rounded-xl bg-white">
-                           Sistema A medida</h1>
+                            Sistema A medida</h1>
                         <p class="text-xl font-bold">Segun requisitos</p>
                         <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="size-4 inline">
@@ -1035,6 +1038,7 @@
     const precioM = document.getElementById("precioM");
     function togglePrecio() {
         precioM.classList.toggle("hidden");
+
     }
 
     //Funcion para cerrar modales
